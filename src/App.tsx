@@ -2,6 +2,15 @@ import { createSignal, createMemo, For, Show, type Component } from "solid-js";
 import styles from "./App.module.css";
 import { listings, allTags, type Category, type Tag } from "./data/directory";
 
+const FALLBACK_IMG = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=60";
+const onImgError = (e: Event) => {
+  const t = e.currentTarget as HTMLImageElement;
+  if (t.src !== FALLBACK_IMG) {
+    t.onerror = null;
+    t.src = FALLBACK_IMG;
+  }
+};
+
 const categories: { id: Category | "all"; label: string; emoji: string }[] = [
   { id: "all", label: "All", emoji: "✨" },
   { id: "gym", label: "Gyms", emoji: "🏋️" },
@@ -67,7 +76,7 @@ const App: Component = () => {
             <a href="#directory" class={styles.cta}>
               Find a gym →
             </a>
-            <button class={styles.mobileMenu} aria-label="Menu" style={{ border: "1px solid var(--border)", background: "#f3f4f6", padding: "8px 10px", "border-radius": "10px" } as any}>
+            <button class={styles.mobileMenu} aria-label="Menu" style={{ border: "1px solid var(--border)", background: "#ffffff", padding: "8px 10px", "border-radius": "10px" } as any}>
               ☰
             </button>
           </div>
@@ -79,7 +88,7 @@ const App: Component = () => {
         <div class={styles.container}>
           <div class={styles.heroInner}>
             <div class={styles.heroCopy}>
-              <div style={{ display: "inline-flex", gap: "8px", "align-items": "center", background: "#f3f4f6", border: "1px solid var(--border)", padding: "6px 12px", "border-radius": "999px", "font-size": "12px", "font-weight": "700", "letter-spacing": "0.02em" } as any}>
+              <div style={{ display: "inline-flex", gap: "8px", "align-items": "center", background: "#ffffff", border: "1px solid var(--border)", padding: "6px 12px", "border-radius": "999px", "font-size": "12px", "font-weight": "700", "letter-spacing": "0.02em" } as any}>
                 <span style={{ background: "#4f46e5", color: "white", padding: "2px 8px", "border-radius": "999px" } as any}>NEW</span> Sensory-friendly • Vetted • Peer-reviewed
               </div>
 
@@ -125,7 +134,7 @@ const App: Component = () => {
                 <For each={featured.slice(0, 4)}>
                   {(item) => (
                     <div class={styles.visualCard}>
-                      <img src={item.image} alt="" loading="lazy" />
+                      <img src={item.image} alt="" loading="lazy" onError={onImgError} />
                       <div class={styles.visualCardBody}>
                         <strong>{item.name.split("—")[0].split(",")[0]}</strong>
                         <span>{item.location.split("•")[0]}</span>
@@ -263,7 +272,7 @@ const App: Component = () => {
                 {(item) => (
                   <article class={styles.card}>
                     <div class={styles.cardMedia}>
-                      <img src={item.image} alt={item.name} loading="lazy" />
+                      <img src={item.image} alt={item.name} loading="lazy" onError={onImgError} />
                       <Show when={item.badge}>
                         <span
                           class={`${styles.badge} ${
@@ -364,7 +373,7 @@ const App: Component = () => {
           </section>
 
           {/* RESOURCES */}
-          <section class={styles.why} id="resources" style={{ background: "linear-gradient(180deg, #f3f4f6, #e5e7eb)" } as any}>
+          <section class={styles.why} id="resources" style={{ background: "linear-gradient(180deg, #ffffff, #e5e7eb)" } as any}>
             <div style={{ display: "flex", "justify-content": "space-between", gap: "16px", "flex-wrap": "wrap", "align-items": "center" } as any}>
               <div>
                 <h2>Free resources for families & clinicians</h2>
