@@ -67,7 +67,7 @@ const App: Component = () => {
             <a href="#directory" class={styles.cta}>
               Find a gym →
             </a>
-            <button class={styles.mobileMenu} aria-label="Menu" style={{ border: "1px solid var(--border)", background: "#f7f7f9", padding: "8px 10px", "border-radius": "10px" } as any}>
+            <button class={styles.mobileMenu} aria-label="Menu" style={{ border: "1px solid var(--border)", background: "#f3f4f6", padding: "8px 10px", "border-radius": "10px" } as any}>
               ☰
             </button>
           </div>
@@ -79,7 +79,7 @@ const App: Component = () => {
         <div class={styles.container}>
           <div class={styles.heroInner}>
             <div class={styles.heroCopy}>
-              <div style={{ display: "inline-flex", gap: "8px", "align-items": "center", background: "#f7f7f9", border: "1px solid var(--border)", padding: "6px 12px", "border-radius": "999px", "font-size": "12px", "font-weight": "700", "letter-spacing": "0.02em" } as any}>
+              <div style={{ display: "inline-flex", gap: "8px", "align-items": "center", background: "#f3f4f6", border: "1px solid var(--border)", padding: "6px 12px", "border-radius": "999px", "font-size": "12px", "font-weight": "700", "letter-spacing": "0.02em" } as any}>
                 <span style={{ background: "#4f46e5", color: "white", padding: "2px 8px", "border-radius": "999px" } as any}>NEW</span> Sensory-friendly • Vetted • Peer-reviewed
               </div>
 
@@ -364,7 +364,7 @@ const App: Component = () => {
           </section>
 
           {/* RESOURCES */}
-          <section class={styles.why} id="resources" style={{ background: "linear-gradient(180deg, #f7f7f9, #eceef0)" } as any}>
+          <section class={styles.why} id="resources" style={{ background: "linear-gradient(180deg, #f3f4f6, #e5e7eb)" } as any}>
             <div style={{ display: "flex", "justify-content": "space-between", gap: "16px", "flex-wrap": "wrap", "align-items": "center" } as any}>
               <div>
                 <h2>Free resources for families & clinicians</h2>
