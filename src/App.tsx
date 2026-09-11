@@ -373,7 +373,7 @@ const App: Component = () => {
           </section>
 
           {/* RESOURCES */}
-          <section class={styles.why} id="resources" style={{ background: "linear-gradient(180deg, #ffffff, #e5e7eb)" } as any}>
+          <section class={styles.why} id="resources" style={{ background: "linear-gradient(180deg, white, #f8fafc)" } as any}>
             <div style={{ display: "flex", "justify-content": "space-between", gap: "16px", "flex-wrap": "wrap", "align-items": "center" } as any}>
               <div>
                 <h2>Free resources for families & clinicians</h2>
