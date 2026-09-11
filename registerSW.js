@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/adaptive-fitness-neurodivergent-adults/sw.js', { scope: '/adaptive-fitness-neurodivergent-adults/' })})}
