@@ -109,11 +109,14 @@ const App: Component = () => {
 
               <div class={styles.searchWrap} role="search">
                 <input
+                  id="searchInput"
                   type="search"
                   placeholder="Search gyms, trainers, or equipment… e.g. “quiet hours Portland”"
                   value={query()}
                   onInput={(e) => setQuery(e.currentTarget.value)}
                   aria-label="Search directory"
+                  enterkeyhint="search"
+                  inputmode="search"
                 />
                 <button
                   class={styles.searchBtn}
@@ -428,6 +431,37 @@ const App: Component = () => {
           </section>
         </div>
       </main>
+
+      {/* BOTTOM NAV SPACER FOR MOBILE PWA */}
+      <div class={styles.bottomNavSpacer} aria-hidden="true" />
+
+      {/* MOBILE BOTTOM NAV - APP LIKE */}
+      <nav class={styles.bottomNav} aria-label="Mobile navigation">
+        <a href="#directory" class={`${styles.bottomNavItem} ${styles.active}`} aria-current="page">
+          <span>◧</span>
+          <span>Directory</span>
+        </a>
+        <a
+          href="#directory"
+          class={styles.bottomNavItem}
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("searchInput")?.focus();
+            document.getElementById("directory")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <span>⌕</span>
+          <span>Search</span>
+        </a>
+        <a href="#why" class={styles.bottomNavItem}>
+          <span>♡</span>
+          <span>Saved</span>
+        </a>
+        <a href="#add" class={styles.bottomNavItem}>
+          <span>＋</span>
+          <span>Add</span>
+        </a>
+      </nav>
 
       {/* FOOTER */}
       <footer class={styles.footer}>

@@ -1,0 +1,67 @@
+{
+  "name": "Adaptive Fitness — Neurodivergent Directory",
+  "short_name": "Adaptive Fit",
+  "description": "Sensory-friendly gyms, certified neuro-inclusive trainers & equipment for autism, ADHD & sensory needs.",
+  "start_url": "/adaptive-fitness-neurodivergent-adults/",
+  "scope": "/adaptive-fitness-neurodivergent-adults/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "any",
+  "theme_color": "#0f1419",
+  "background_color": "#0f1419",
+  "categories": ["health", "fitness", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/adaptive-fitness-neurodivergent-adults/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/adaptive-fitness-neurodivergent-adults/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/adaptive-fitness-neurodivergent-adults/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/adaptive-fitness-neurodivergent-adults/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/adaptive-fitness-neurodivergent-adults/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Find a gym",
+      "short_name": "Gyms",
+      "description": "Search sensory-friendly gyms",
+      "url": "/adaptive-fitness-neurodivergent-adults/#directory",
+      "icons": [{ "src": "/adaptive-fitness-neurodivergent-adults/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Trainers",
+      "short_name": "Trainers",
+      "description": "Certified neuro-inclusive trainers",
+      "url": "/adaptive-fitness-neurodivergent-adults/#directory",
+      "icons": [{ "src": "/adaptive-fitness-neurodivergent-adults/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "handle_links": "preferred",
+  "launch_handler": { "client_mode": "navigate-existing" },
+  "edge_side_panel": { "preferred_width": 400 }
+}

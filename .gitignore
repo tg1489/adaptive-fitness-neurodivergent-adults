@@ -37,3 +37,6 @@ pnpm-debug.log*
 
 # Vite
 .vite
+dev-dist
+# PWA
+public/icons/icon-512-alt.png

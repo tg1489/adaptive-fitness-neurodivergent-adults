@@ -718,27 +718,178 @@
   color: var(--muted);
 }
 
-/* RESPONSIVE */
+/* BOTTOM NAV - APP LIKE (MOBILE) */
+.bottomNav {
+  display: none;
+}
+.bottomNavSpacer {
+  display: none;
+}
+
+/* RESPONSIVE - APP LIKE */
 @media (max-width: 960px) {
-  .heroInner { grid-template-columns: 1fr; }
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  .heroInner { grid-template-columns: 1fr; gap: 24px; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .whyGrid { grid-template-columns: repeat(2, 1fr); }
   .ctaSection { grid-template-columns: 1fr; }
-  .footerInner { grid-template-columns: 1fr 1fr; }
+  .footerInner { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .filters { top: 60px; }
 }
+
 @media (max-width: 640px) {
-  .headerInner { padding: 12px 16px; }
+  /* Safe area for iPhone notch / home indicator */
+  .header {
+    padding-top: env(safe-area-inset-top);
+  }
+  .headerInner {
+    padding: 10px 16px;
+    padding-top: calc(10px + env(safe-area-inset-top, 0px));
+    gap: 12px;
+  }
+  .brandTitle { font-size: 15px; }
+  .brandSub { display: none; }
   .nav { display: none; }
-  .mobileMenu { display: inline-flex; }
+  .mobileMenu { display: inline-flex; min-height: 44px; min-width: 44px; justify-content: center; }
+  .cta { padding: 10px 16px; font-size: 13px; min-height: 44px; }
   .container { padding: 0 16px; }
-  .heroInner { padding: 20px 16px; }
+  .shell { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+
+  /* Hero - app stack, no scrunch */
+  .hero { padding: 16px 0 8px; }
+  .heroInner {
+    padding: 20px 16px 18px;
+    gap: 20px;
+    border-radius: 20px;
+  }
+  .heroCopy h1 { font-size: 28px; line-height: 1.05; margin-bottom: 10px; }
+  .heroLead { font-size: 14px; line-height: 1.55; margin-bottom: 14px; }
+  .heroBullets { gap: 6px; margin-bottom: 16px; }
+  .heroBullets li { font-size: 12px; padding: 5px 10px; }
+  .searchWrap {
+    flex-direction: row;
+    border-radius: 999px;
+    padding: 4px;
+    gap: 6px;
+  }
+  .searchWrap input { padding: 10px 12px; font-size: 15px; min-height: 44px; }
+  .searchBtn { width: auto; padding: 10px 16px; min-height: 44px; white-space: nowrap; flex-shrink: 0; }
+  .searchMeta { font-size: 11px; gap: 8px; }
+  .heroVisual { padding: 12px; border-radius: 16px; }
+  .visualGrid { gap: 10px; }
+  .visualCard img { height: 96px; }
+  .visualCardBody { padding: 8px 10px; }
+  .heroStat { gap: 8px; margin-top: 12px; padding-top: 12px; }
+  .heroStat strong { font-size: 18px; }
+  .heroStat span { font-size: 10px; }
+
+  /* Trust - stack cleanly */
+  .trust { flex-direction: column; align-items: flex-start; gap: 12px; padding: 14px 0; }
+  .trustLeft { font-size: 12px; }
+  .trustLogos { gap: 12px; font-size: 10px; opacity: 0.9; }
+
+  /* Filters - horizontal scroll, not wrap scrunch */
+  .filters {
+    top: calc(56px + env(safe-area-inset-top, 0px));
+    padding: 12px 0 10px;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow: hidden;
+  }
+  .filtersInner { flex-direction: column; align-items: stretch; gap: 10px; }
+  .tabs {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    padding: 4px;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex-shrink: 0; padding: 8px 14px; font-size: 13px; min-height: 36px; }
+  .pills {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    gap: 8px;
+  }
+  .pills::-webkit-scrollbar { display: none; }
+  .pill { flex-shrink: 0; font-size: 12px; padding: 6px 12px; min-height: 32px; }
+  .resultsMeta { font-size: 12px; padding: 10px 0 6px; }
+
+  /* Grid - app cards, larger touch, not scrunched */
+  .main { padding-bottom: 16px; }
+  .grid { grid-template-columns: 1fr; gap: 16px; }
+  .card { border-radius: 18px; }
+  .cardMedia { height: 192px; }
+  .cardBody { padding: 14px 14px 12px; gap: 8px; }
+  .cardHead h3 { font-size: 15px; }
+  .cardDesc { font-size: 13px; -webkit-line-clamp: 2; }
+  .tag { font-size: 11px; padding: 4px 8px; }
+  .cardFoot { padding-top: 10px; }
+  .viewBtn { padding: 8px 16px; min-height: 36px; }
+
+  /* Why / CTA / Footer - stack clean */
+  .why { padding: 20px 16px; margin-top: 20px; border-radius: 18px; }
+  .why h2 { font-size: 18px; }
+  .whySub { font-size: 13px; }
+  .whyGrid { grid-template-columns: 1fr; gap: 12px; }
+  .whyCard { padding: 14px; }
+  .ctaSection { padding: 20px 16px; gap: 16px; border-radius: 18px; }
+  .ctaSection h2 { font-size: 20px; }
+  .footer { margin-top: 20px; padding-bottom: env(safe-area-inset-bottom); }
+  .footerInner { grid-template-columns: 1fr; gap: 20px; padding: 20px 16px; }
+  .footerBottom { flex-direction: column; gap: 6px; text-align: center; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); }
+
+  /* Bottom Nav - iOS app feel */
+  .bottomNav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(15,20,25,0.96);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-top: 1px solid #2a3439;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    gap: 4px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .bottomNavItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 6px 4px;
+    border-radius: 12px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    min-height: 52px;
+    justify-content: center;
+    transition: color .2s, background .2s;
+  }
+  .bottomNavItem span:first-child { font-size: 20px; line-height: 1; }
+  .bottomNavItem.active {
+    color: #f1f5f9;
+    background: #1e293b;
+  }
+  .bottomNavSpacer { display: block; height: calc(72px + env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 380px) {
+  .heroCopy h1 { font-size: 24px; }
   .searchWrap { flex-direction: column; border-radius: 16px; }
-  .searchWrap input { padding: 8px 12px; }
-  .searchBtn { width: 100%; justify-content: center; }
-  .grid { grid-template-columns: 1fr; }
-  .cardMedia { height: 200px; }
-  .tabs { width: 100%; overflow-x: auto; }
-  .pills { width: 100%; }
-  .whyGrid { grid-template-columns: 1fr; }
-  .footerInner { grid-template-columns: 1fr; }
+  .searchBtn { width: 100%; }
+  .visualGrid { grid-template-columns: 1fr; }
+  .visualCard img { height: 120px; }
 }
